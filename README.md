@@ -4,7 +4,7 @@
 
 * Proje issuelar üzerinden gidecekir.
 * Gözünüze kestirdiğiniz issueyu üstlenip yapabilirsiniz ancak üstlendiğinizi belirtin ki bir başkası da aynı işle uğraşmasın :)
-* Issuelar en kısa zamanda eklenecektir.
+* Şu özellik olsun dediğiniz şeyleri issue olarak açabilirsiniz.
 
 **Projeyi Kendi Bilgisayarınızda Çalıştırmak İçin:**
 
