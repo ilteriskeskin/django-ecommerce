@@ -9,6 +9,7 @@
 {% else %}
   <p>You are not logged in!</p>
   <a href="{% url 'login' %}">Log In</a> |
-  <a href="{% url 'signup' %}">Sign Up</a>
+  <a href="{% url 'signup' %}">Sign Up</a> |
+  <a href="{% url 'product-list' %}">Product List</a>
 {% endif %}
 {% endblock %}
