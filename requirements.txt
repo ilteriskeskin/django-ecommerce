@@ -4,3 +4,4 @@ pytz==2020.5
 sqlparse==0.4.1
 django-crispy-forms==1.10.0
 psycopg2==2.8.6
+Pillow==8.1.0

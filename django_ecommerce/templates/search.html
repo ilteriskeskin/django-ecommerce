@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Results{% endblock title %}
+
+{% block content %}
+<h1>Search Results</h1>
+  <div class="row">
+    {% for product in product_list %}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                    <img class="tableimage" src="{{ product.image.url }}" alt="{{ product.title }}">
+                    <h5 class="card-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
+                    <p class="card-text">{{ product.description|slice:":100" }}......</p>
+                    <a href="{{ table.get_absolute_url }}" class="btn btn-primary">${{ product.price }}</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}
