@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Built in apps
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'users.apps.UsersConfig',
+    'products.apps.ProductsConfig',
 
     # Third-party apps
     'crispy_forms',
@@ -128,3 +129,7 @@ LOGOUT_REDIRECT_URL = 'home'
 
 # Crispy template pack.
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# User uploaded images.
+MEDIA_URL = '/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
