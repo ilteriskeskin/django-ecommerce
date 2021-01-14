@@ -76,7 +76,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': '',
+        'HOST': '127.0.0.1',
         'PORT': 5432
     }
 }
@@ -126,6 +126,14 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # Redirection urls.
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+# E-mail //  via Gmail
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'deneme@gmail.com'
+EMAIL_HOST_PASSWORD = 'password12345'
 
 # Crispy template pack.
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
