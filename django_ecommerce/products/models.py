@@ -3,13 +3,13 @@ from django.urls import reverse
 
 
 class Product(models.Model):
-    title = models.CharField(max_length=255, blank=False)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=7, decimal_places=2)
-    image = models.ImageField(upload_to='media/',)
-    stock = models.IntegerField()
-    #category = models.ForeignKey()
-    slug = models.SlugField()
+    title = models.CharField(max_length=255, blank=False, verbose_name='Product Title')
+    description = models.TextField(verbose_name='Product Description')
+    price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='Product Price')
+    image = models.ImageField(upload_to='media/', verbose_name='Product Image')
+    stock = models.IntegerField(verbose_name='Product Stock')
+    slug = models.SlugField(verbose_name='Product Slug')
+    # category = models.ForeignKey()
 
     def __str__(self):
         return self.title

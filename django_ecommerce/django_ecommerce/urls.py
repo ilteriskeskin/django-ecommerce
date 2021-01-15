@@ -5,23 +5,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
-from products import views as ProductViews
+from products.views import SearchResultView
 
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('admin/', admin.site.urls),
 
-    # Authentication.
+    # Authentication
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
 
-    # Products.
+    # Products
     path('products/', include('products.urls')),
 
-    # Searching.
-    path('search/', ProductViews.SearchResultView.as_view(), name='search'),
-
+    # Searching
+    path('search/', SearchResultView.as_view(), name='search'),
 ]
 
 if settings.DEBUG:
