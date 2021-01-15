@@ -35,7 +35,7 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
 class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     template_name = 'products/product_delete.html'
-    success_url = reverse_lazy('product-list')  # After action is successfull, redirect to the desired page.
+    success_url = reverse_lazy('product-list')  # After the action is successful, redirect to the desired page.
 
 
 class SearchResultView(ListView):
@@ -45,5 +45,6 @@ class SearchResultView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        object_list = Product.objects.filter(title__icontains=query) # Searching for the field. In this case, Title field.
+        object_list = Product.objects.filter(title__icontains=query) # Searching for the field. In this case, Title
+        # field.
         return object_list
