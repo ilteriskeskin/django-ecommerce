@@ -11,7 +11,7 @@ from .views import (
 urlpatterns = [
     # Product list & detail
     path('', ProductListView.as_view(), name='product-list'),
-    path('<int:pk>', ProductDetailView.as_view(), name='product-detail'),
+    path('<slug:slug>', ProductDetailView.as_view(), name='product-detail'),
 
     # CRUD
     path('create/', ProductCreateView.as_view(), name='product-create'),
