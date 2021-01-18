@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 
     # Local apps
     'users.apps.UsersConfig',
@@ -142,3 +144,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # User uploaded images.
 MEDIA_URL = '/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Sitemap setting.
+SITE_ID = 1
