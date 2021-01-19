@@ -41,10 +41,9 @@ class CustomUserTests(TestCase):
 
 
 class SignupTests(TestCase):
-    username = 'newuser'
-    email = 'newuser@gmail.com'
-
     def setUp(self):
+        self.username = 'newuser'
+        self.email = 'newuser@gmail.com'
         url = reverse('signup')
         self.response = self.client.get(url)
 
