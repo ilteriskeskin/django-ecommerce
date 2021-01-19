@@ -52,6 +52,10 @@ class SignupTests(TestCase):
         self.assertTemplateUsed(self.response, 'registration/signup.html')
 
     def test_signup_form(self):
-        new_user = get_user_model().objects.create_user(self.username)
+        new_user = get_user_model().objects.create_user(self.username, self.email)
         self.assertEqual(get_user_model().objects.all().count(), 1)
         self.assertEqual(get_user_model().objects.all()[0].username, new_user.username)
+        self.assertEqual(get_user_model().objects.all()[0].email, new_user.email)
+
+        self.assertFalse(new_user.is_staff)
+        self.assertFalse(new_user.is_superuser)
