@@ -1,11 +1,18 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
+from django.contrib.sitemaps import GenericSitemap
+from django.contrib.sitemaps.views import sitemap
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views
 
 from products.views import SearchResultView
+from products.models import Product
+
+
+info_dict = {
+    'queryset': Product.objects.all(),
+}
 
 
 urlpatterns = [
@@ -21,6 +28,12 @@ urlpatterns = [
 
     # Searching
     path('search/', SearchResultView.as_view(), name='search'),
+
+    # Sitemap
+    path('sitemap.xml', sitemap,
+         {'sitemaps': {'blog': GenericSitemap(info_dict, priority=0.6, protocol='https'), }},
+         name='django.contrib.sitemaps.views.sitemap'),
+
 ]
 
 if settings.DEBUG:
