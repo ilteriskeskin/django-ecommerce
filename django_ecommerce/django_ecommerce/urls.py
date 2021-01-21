@@ -16,15 +16,15 @@ info_dict = {
 
 
 urlpatterns = [
+    # Default
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('admin/', admin.site.urls),
 
-    # Authentication
-    path('users/', include('users.urls')),
-    path('users/', include('django.contrib.auth.urls')),
-
     # Products
     path('products/', include('products.urls')),
+
+    # Basket
+    path('basket/', include('baskets.urls')),
 
     # Searching
     path('search/', SearchResultView.as_view(), name='search'),
@@ -33,6 +33,10 @@ urlpatterns = [
     path('sitemap.xml', sitemap,
          {'sitemaps': {'blog': GenericSitemap(info_dict, priority=0.6, protocol='https'), }},
          name='django.contrib.sitemaps.views.sitemap'),
+
+    # Authentication
+    path('users/', include('users.urls')),
+    path('users/', include('django.contrib.auth.urls')),
 
 ]
 

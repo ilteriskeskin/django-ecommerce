@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     # Local apps
     'users.apps.UsersConfig',
     'products.apps.ProductsConfig',
+    'baskets.apps.BasketsConfig',
 
     # Third-party apps
     'crispy_forms',
