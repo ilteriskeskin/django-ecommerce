@@ -9,7 +9,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='media/', verbose_name='Product Image')
     stock = models.IntegerField(verbose_name='Product Stock')
     slug = models.SlugField(verbose_name='Product Slug', unique=True)
-    # category = models.ForeignKey()
+    # category = models.ManyToManyField()
 
     def __str__(self):
         return self.title

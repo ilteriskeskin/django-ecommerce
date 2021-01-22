@@ -7,8 +7,8 @@ from .models import Basket
 
 class BasketDetailView(LoginRequiredMixin, DetailView):
     model = Basket
-    context_object_name = 'basket_list'
-    template_name = 'basket/basket_list.html'
+    context_object_name = 'basket'
+    template_name = 'basket/basket_detail.html'
 
     def get(self, request, *args, **kwargs):
         basket = Basket.objects.filter(user=request.user, ordered=False)
