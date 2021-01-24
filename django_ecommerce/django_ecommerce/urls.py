@@ -4,6 +4,7 @@ from django.contrib.sitemaps import GenericSitemap
 from django.contrib.sitemaps.views import sitemap
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
 
 from products.views import SearchResultView
 from products.models import Product
@@ -16,6 +17,7 @@ info_dict = {
 
 urlpatterns = [
     # Default
+    path('home/', TemplateView.as_view(template_name='home.html'), name='home'),
     path('admin/', admin.site.urls),
 
     # Authentication
