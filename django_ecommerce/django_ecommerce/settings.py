@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = env('DEBUG')  # Don't forget to make this FALSE in the env file before deployment.
 
 ALLOWED_HOSTS = []
 
@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'django_ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASSWORD'),
-        'HOST': env('DATABASE_HOST'),
-        'PORT': env('DATABASE_PORT'),
+        'NAME': env('DATABASE_NAME'),  # Change this setting in the env field.
+        'USER': env('DATABASE_USER'),  # Change this setting in the env field.
+        'PASSWORD': env('DATABASE_PASSWORD'), # Change this setting in the env field.
+        'HOST': env('DATABASE_HOST'),  # Change this setting in the env field.
+        'PORT': env('DATABASE_PORT'),  # Change this setting in the env field.
     }
 }
 
