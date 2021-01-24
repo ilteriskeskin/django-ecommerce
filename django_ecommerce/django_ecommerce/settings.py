@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'django_ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DATABASE_NAME'),  # Change this setting in the env field.
-        'USER': env('DATABASE_USER'),  # Change this setting in the env field.
-        'PASSWORD': env('DATABASE_PASSWORD'), # Change this setting in the env field.
-        'HOST': env('DATABASE_HOST'),  # Change this setting in the env field.
-        'PORT': env('DATABASE_PORT'),  # Change this setting in the env field.
+        'NAME': env('DATABASE_NAME'),  # Change this setting in the env file.
+        'USER': env('DATABASE_USER'),  # Change this setting in the env file.
+        'PASSWORD': env('DATABASE_PASSWORD'), # Change this setting in the env file.
+        'HOST': env('DATABASE_HOST'),  # Change this setting in the env file.
+        'PORT': env('DATABASE_PORT'),  # Change this setting in the env file.
     }
 }
 
