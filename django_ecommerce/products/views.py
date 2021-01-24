@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-from .models import Product
+from .models import Product, Category
 
 
 class ProductListView(ListView):
@@ -48,3 +48,17 @@ class SearchResultView(ListView):
         object_list = Product.objects.filter(title__icontains=query) # Searching for the field. In this case, Title
         # field.
         return object_list
+
+
+class CategoryDetailView(DetailView):
+    model = Category
+    queryset = Category.objects.all()
+    template_name = 'products/category_detail.html'
+    context_object_name = 'category'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category = self.get_object()
+        context['category'] = category
+        context['products'] = Product.objects.filter(category=category)
+        return context

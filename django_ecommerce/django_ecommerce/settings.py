@@ -1,5 +1,13 @@
 from pathlib import Path
+import environ
 import os
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,10 +17,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'sfzxt5-+(=dw-#83r&xe-)84@ku5!-70et=pi!vwrzvrjkxk+@'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')  # Don't forget to make this FALSE in the env file before deployment.
 
 ALLOWED_HOSTS = []
 
@@ -76,11 +84,11 @@ WSGI_APPLICATION = 'django_ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
-        'PORT': 5432
+        'NAME': env('DATABASE_NAME'),  # Change this setting in the env file.
+        'USER': env('DATABASE_USER'),  # Change this setting in the env file.
+        'PASSWORD': env('DATABASE_PASSWORD'), # Change this setting in the env file.
+        'HOST': env('DATABASE_HOST'),  # Change this setting in the env file.
+        'PORT': env('DATABASE_PORT'),  # Change this setting in the env file.
     }
 }
 
@@ -131,7 +139,9 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 # E-mail //  via Gmail
-# Host user linkten izin vermeli. Link: https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4NJd5JiEqULJC38WFF4b2WaT8Xg1X0yBALpCU0ljWyb3bCkCOYzDH19RLnO24eDR-Mgybo50Rj--GNxrujqlhaCQqd-Sg
+# Host user linkten izin vermeli.
+# Link:
+# https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4NJd5JiEqULJC38WFF4b2WaT8Xg1X0yBALpCU0ljWyb3bCkCOYzDH19RLnO24eDR-Mgybo50Rj--GNxrujqlhaCQqd-Sg
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'

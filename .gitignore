@@ -137,3 +137,6 @@ media/
 .idea
 
 .vscode
+
+# Environment variables
+.env

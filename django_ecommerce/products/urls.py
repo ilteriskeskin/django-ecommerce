@@ -4,14 +4,18 @@ from .views import (
     ProductDetailView,
     ProductCreateView,
     ProductUpdateView,
-    ProductDeleteView
+    ProductDeleteView,
+    CategoryDetailView
 )
 
 
 urlpatterns = [
     # Product list & detail
     path('', ProductListView.as_view(), name='product-list'),
-    path('<slug:slug>', ProductDetailView.as_view(), name='product-detail'),
+    path('<slug:category_slug>/<slug:slug>/', ProductDetailView.as_view(), name='product-detail'),
+
+    # Category Detail
+    path('<slug:slug>/', CategoryDetailView.as_view(), name='category-detail'),
 
     # CRUD
     path('create/', ProductCreateView.as_view(), name='product-create'),
