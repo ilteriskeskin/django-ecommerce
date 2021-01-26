@@ -6,9 +6,9 @@
 <h1 class="title">{{ category.title }}</h1>
 
 <div class="columns is-multiline">
-    {% if products %}
+    {% if category.products.all %}
     <div class="row">
-        {% for product in products %}
+        {% for product in category.products.all %}
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
                         <img class="tableimage" src="{{ product.image.url }}" alt="{{ product.title }}">
