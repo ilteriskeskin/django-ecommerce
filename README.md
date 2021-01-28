@@ -30,7 +30,6 @@ python3 manage.py runserver
 .\env\Scripts\activate
 pip3 install -r requirements.txt
 cd django_ecommerce
-python3 manage.py runserver
 ```
 
 **Environment Variables**
@@ -69,4 +68,7 @@ DATABASE_PASSWORD=postgres
 DATABASE_HOST=127.0.0.1
 DATABASE_PORT=5432
 ```
-
+* Environment variables'ları ekledikten sonra, terminal'e aşağıdaki komutu yazarak projeyi çalıştırabilirsiniz.
+```
+python3 manage.py runserver
+```
