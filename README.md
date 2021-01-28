@@ -38,7 +38,7 @@ python3 manage.py runserver
 * Projenin settings.py dosyasındaki bazı ayarları konfigüre etmek için projenin bağımlılıklarında olan django-environs paketinin gerektirdiği .env dosyasını yaratmalı ve settings.py dosyasındaki bazı ayarları .env dosyasında değiştirmelisiniz.
 * .env dosyası settings.py dosyası ile aynı dizinde olmalı.
 * SECRET_KEY'i [bunun gibi sitelerden](https://djecrety.ir/) rastgele olarak üretip ilgili alana ekleyebilirsiniz. Veya dilerseniz terminal'i çalıştırıp `python manage.py shell` yazıp,
-```
+```python
 from django.core.management.utils import get_random_secret_key
 get_random_secret_key()
 ```
