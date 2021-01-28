@@ -2,9 +2,6 @@ from django.urls import path
 from .views import (
     ProductListView,
     ProductDetailView,
-    ProductCreateView,
-    ProductUpdateView,
-    ProductDeleteView,
     CategoryDetailView
 )
 
@@ -16,9 +13,4 @@ urlpatterns = [
 
     # Category Detail
     path('<slug:slug>/', CategoryDetailView.as_view(), name='category-detail'),
-
-    # CRUD
-    path('create/', ProductCreateView.as_view(), name='product-create'),
-    path('<int:pk>/update/', ProductUpdateView.as_view(), name='product-update'),
-    path('<int:pk>/delete/', ProductDeleteView.as_view(), name='product-delete'),
 ]
