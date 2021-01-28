@@ -1,4 +1,5 @@
-### Django E-commerce
+# Django E-commerce
+***
 
 **Django ile bir e-ticaret uygulaması yapılması hedeflenmiştir.**
 
