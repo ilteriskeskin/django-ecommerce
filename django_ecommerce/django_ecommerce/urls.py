@@ -37,9 +37,6 @@ urlpatterns = [
     path('sitemap.xml', sitemap,
          {'sitemaps': {'blog': GenericSitemap(info_dict, priority=0.6, protocol='https'), }},
          name='django.contrib.sitemaps.views.sitemap'),
-
-
-
 ]
 
 if settings.DEBUG:

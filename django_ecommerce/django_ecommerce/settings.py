@@ -17,10 +17,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')  # Don't forget to make this FALSE in the env file before deployment.
+DEBUG = env.bool('DEBUG')  # Don't forget to make this FALSE in the env file before deployment.
 
 ALLOWED_HOSTS = []
 
@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'django_ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DATABASE_NAME'),  # Change this setting in the env file.
-        'USER': env('DATABASE_USER'),  # Change this setting in the env file.
-        'PASSWORD': env('DATABASE_PASSWORD'), # Change this setting in the env file.
-        'HOST': env('DATABASE_HOST'),  # Change this setting in the env file.
-        'PORT': env('DATABASE_PORT'),  # Change this setting in the env file.
+        'NAME': env.str('DATABASE_NAME'),  # Change this setting in the env file.
+        'USER': env.str('DATABASE_USER'),  # Change this setting in the env file.
+        'PASSWORD': env.str('DATABASE_PASSWORD'),  # Change this setting in the env file.
+        'HOST': env.str('DATABASE_HOST'),  # Change this setting in the env file.
+        'PORT': env.str('DATABASE_PORT'),  # Change this setting in the env file.
     }
 }
 
