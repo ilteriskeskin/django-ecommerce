@@ -33,8 +33,8 @@ cd django_ecommerce
 
 **Environment Variables**
 
-* Projenin settings.py dosyasındaki bazı ayarları konfigüre etmek için projenin bağımlılıklarında olan django-environs paketinin gerektirdiği .env dosyasını yaratmalı ve settings.py dosyasındaki bazı ayarları .env dosyasında değiştirmelisiniz.
-* .env dosyası settings.py dosyası ile aynı dizinde olmalı.
+* Projenin [settings.py](django_ecommerce/django_ecommerce/settings.py) dosyasındaki bazı ayarları konfigüre etmek için projenin bağımlılıklarında olan [django-environ](https://github.com/joke2k/django-environ) paketinin gerektirdiği .env dosyasını yaratmalı ve [settings.py](django_ecommerce/django_ecommerce/settings.py) dosyasındaki bazı ayarları .env dosyasında değiştirmelisiniz.
+* .env dosyası [settings.py](django_ecommerce/django_ecommerce/settings.py) dosyası ile aynı dizinde olmalı.
 * SECRET_KEY'i [bunun gibi sitelerden](https://djecrety.ir/) rastgele olarak üretip ilgili alana ekleyebilirsiniz. Veya dilerseniz terminal'i çalıştırıp `python manage.py shell` yazıp,
 ```python
 from django.core.management.utils import get_random_secret_key
