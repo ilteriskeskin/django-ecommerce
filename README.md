@@ -11,7 +11,7 @@
 * Linter: Black
 * Virtual env : Optional
 
-**Projeyi Kendi Bilgisayarınızda Çalıştırmak İçin:**
+**Projeyi Kendi Bilgisayarınızda Kurmak ve Çalıştırmaya Hazır Hale Getirmek İçin:**
 
 ```
 git clone https://github.com/ilteriskeskin/django-ecommerce.git
