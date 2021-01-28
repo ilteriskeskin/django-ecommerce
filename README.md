@@ -24,7 +24,6 @@ python3 -m venv env # Eğer sanal bir ortamınız yoksa
 source env/bin/activate
 pip3 install requirements.txt
 cd django_ecommerce
-python3 manage.py runserver
 =======
 ..Windows Terminal için..
 .\env\Scripts\activate
