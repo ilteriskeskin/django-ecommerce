@@ -16,7 +16,6 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     inlines = [ProductInLine, ]
     prepopulated_fields = {'slug': ('title',)}
-    extra = 2
 
 
 admin.site.register(Product, ProductAdmin)
