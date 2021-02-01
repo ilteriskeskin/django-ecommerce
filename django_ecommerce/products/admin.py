@@ -9,13 +9,20 @@ class ProductInLine(admin.TabularInline):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'price', 'stock',)
-    prepopulated_fields = {'slug': ('title',)}
+    list_display = (
+        "title",
+        "description",
+        "price",
+        "stock",
+    )
+    prepopulated_fields = {"slug": ("title",)}
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    inlines = [ProductInLine, ]
-    prepopulated_fields = {'slug': ('title',)}
+    inlines = [
+        ProductInLine,
+    ]
+    prepopulated_fields = {"slug": ("title",)}
 
 
 admin.site.register(Product, ProductAdmin)

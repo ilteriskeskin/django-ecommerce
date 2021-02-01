@@ -16,4 +16,4 @@ class Basket(models.Model):
 
     @staticmethod
     def get_absolute_url():
-        return reverse('basket-detail')
+        return reverse("basket-detail")
