@@ -11,32 +11,34 @@ from products.models import Product
 
 
 info_dict = {
-    'queryset': Product.objects.all(),
+    "queryset": Product.objects.all(),
 }
 
 
 urlpatterns = [
     # Default
-    path('home/', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('admin/', admin.site.urls),
-
+    path("home/", TemplateView.as_view(template_name="home.html"), name="home"),
+    path("admin/", admin.site.urls),
     # Authentication
-    path('users/', include('users.urls')),
-    path('users/', include('django.contrib.auth.urls')),
-
+    path("users/", include("users.urls")),
+    path("users/", include("django.contrib.auth.urls")),
     # Searching
-    path('search/', SearchResultView.as_view(), name='search'),
-
+    path("search/", SearchResultView.as_view(), name="search"),
     # Products
-    path('', include('products.urls')),
-
+    path("", include("products.urls")),
     # Basket
     # path('basket/', include('baskets.urls')),
-
     # Sitemap
-    path('sitemap.xml', sitemap,
-         {'sitemaps': {'blog': GenericSitemap(info_dict, priority=0.6, protocol='https'), }},
-         name='django.contrib.sitemaps.views.sitemap'),
+    path(
+        "sitemap.xml",
+        sitemap,
+        {
+            "sitemaps": {
+                "blog": GenericSitemap(info_dict, priority=0.6, protocol="https"),
+            }
+        },
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
 ]
 
 if settings.DEBUG:
