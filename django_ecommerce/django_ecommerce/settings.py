@@ -1,6 +1,5 @@
 from pathlib import Path
 import environ
-import os
 
 
 # django-environ settings
@@ -60,7 +59,7 @@ ROOT_URLCONF = "django_ecommerce.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [str(BASE_DIR.joinpath("templates"))],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -154,7 +153,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # User uploaded images.
 MEDIA_URL = "/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Sitemap setting.
 SITE_ID = 1
