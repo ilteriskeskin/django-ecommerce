@@ -152,8 +152,8 @@ EMAIL_HOST_PASSWORD = "password"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # User uploaded images.
-MEDIA_URL = "/"
-MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR
 
 # Sitemap setting.
 SITE_ID = 1
