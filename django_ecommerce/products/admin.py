@@ -14,8 +14,13 @@ class ProductAdmin(admin.ModelAdmin):
         "description",
         "price",
         "stock",
+        "date_added",
     )
     prepopulated_fields = {"slug": ("title",)}
+    search_fields = ("title",)
+    list_filter = ("category",)
+    date_hierarchy = "date_added"
+    order_by = "-date_added"
 
 
 class CategoryAdmin(admin.ModelAdmin):
