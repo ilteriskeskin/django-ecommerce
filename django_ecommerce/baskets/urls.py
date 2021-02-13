@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import BasketDetailView
+from .views import basket_detail
 
 
 urlpatterns = [
-    path("", BasketDetailView.as_view(), name="basket-detail"),
+    path("", basket_detail, name="basket-detail"),
 ]

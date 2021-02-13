@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static % }
 
 {% block title %}{{ product.title }}{% endblock title %}
 
@@ -8,8 +9,7 @@
         <img class="tableimage2" src="{{ product.image.url }}" alt="{{ product.name }}">
             <h5 class="card-title"><a href="#">{{ product.title }}</a></h5>
             <p class="card-text">{{ product.description|linebreaksbr }} </p>
-            <a href="#" class="btn btn-primary">${{ product.price }}</a>
-            <button class="" type="submit" name="cart-button">Add To Cart</button>
+            <a href="#" class="btn btn-primary">${{ product.price }} | Add To Cart</a>
     </div>
 </div>
 {% endblock content %}

@@ -5,11 +5,13 @@
 {% block content %}
 {% if user.is_authenticated %}
   <p>Hi {{ user.username }}!</p>
+  <hr />
   <a href="{% url 'product-list' %}">Product List</a> |
   <a href="{% url 'logout' %}">Log Out</a> |
   <a href="{% url 'password_reset' %}">Reset Password</a>
 {% else %}
   <p>You are not logged in!</p>
+  <hr />
   <a href="{% url 'login' %}">Log In</a> |
   <a href="{% url 'signup' %}">Sign Up</a> |
   <a href="{% url 'product-list' %}">Product List</a>

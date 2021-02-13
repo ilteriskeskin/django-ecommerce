@@ -129,6 +129,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
+STATICFILES_DIRS = (str(BASE_DIR.joinpath("static")),)
+STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
 
 # Custom user section.
 AUTH_USER_MODEL = "users.CustomUser"
@@ -152,7 +154,7 @@ EMAIL_HOST_PASSWORD = "password"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # User uploaded images.
-MEDIA_URL = "/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 # Sitemap setting.
