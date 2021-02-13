@@ -5,15 +5,19 @@ from django.views.generic import DetailView
 from .models import Basket
 
 
-class BasketDetailView(LoginRequiredMixin, DetailView):
-    model = Basket
-    context_object_name = "basket"
-    template_name = "basket/basket_detail.html"
+# class BasketDetailView(LoginRequiredMixin, DetailView):
+#     model = Basket
+#     context_object_name = "basket"
+#     template_name = "basket/basket_detail.html"
+#
+#     # def get(self, request, *args, **kwargs):
+#     #     basket = Basket.objects.filter(user=request.user, ordered=False)
+#     #
+#     #     if basket:
+#     #         return render(request, "basket/basket_list.html")
+#     #
+#     #     return render(request, "home.html")
 
-    def get(self, request, *args, **kwargs):
-        basket = Basket.objects.filter(user=request.user, ordered=False)
 
-        if basket:
-            return render(request, "basket/basket_list.html")
-
-        return render(request, "home.html")
+def basket_detail(request):
+    return render(request, "basket/basket_detail.html", {})

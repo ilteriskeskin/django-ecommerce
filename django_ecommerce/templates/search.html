@@ -4,20 +4,26 @@
 
 {% block content %}
 <h1>Search Results</h1>
-  <div class="row">
-    {% if product_list %}
-        {% for product in product_list %}
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                        <img class="tableimage" src="{{ product.image.url }}" alt="{{ product.title }}">
-                        <h5 class="card-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
-                        <p class="card-text">{{ product.description|slice:":100" }}......</p>
-                        <a href="{{ table.get_absolute_url }}" class="btn btn-primary">${{ product.price }}</a>
-                </div>
-            </div>
-        {% endfor %}
-    {% else %}
-      <h2>No product(s) found.</h2>
-    {% endif %}
+<hr />
+{% if product_list %}
+{% for product in product_list %}
+<div class="row">
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{{ product.image.url }}">
+        <div class="box-element product">
+            <h6><strong>{{ product.title }}</strong></h6>
+            <hr>
+
+            <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+            <a class="btn btn-outline-success" href="{{ product.get_absolute_url }}">View</a>
+            <h4 style="display: inline-block; float: right"><strong>${{ product.price }}</strong></h4>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<br/>
+<h2>No product(s) found.</h2>
+{% endif %}
 </div>
 {% endblock content %}
