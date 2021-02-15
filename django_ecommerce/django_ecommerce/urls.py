@@ -24,8 +24,10 @@ urlpatterns = [
     path("users/", include("django.contrib.auth.urls")),
     # Searching
     path("search/", SearchResultView.as_view(), name="search"),
+    # Orders
+    path("orders/", include("orders.urls")),
     # Products
-    path("", include("products.urls")),
+    path("products/", include("products.urls")),
     # Sitemap
     path(
         "sitemap.xml",

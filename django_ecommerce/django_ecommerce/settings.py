@@ -136,6 +136,7 @@ STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
 AUTH_USER_MODEL = "users.CustomUser"
 
 # Redirection urls.
+LOGIN_URL = "home"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 
