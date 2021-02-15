@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
 from .models import Product, Category
@@ -33,3 +34,7 @@ class CategoryDetailView(DetailView):
     model = Category
     template_name = "products/category_detail.html"
     context_object_name = "category"
+
+
+def basket_view(request):
+    return render(request, "basket/basket.html", {})

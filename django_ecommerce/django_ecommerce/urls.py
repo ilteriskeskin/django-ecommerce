@@ -24,8 +24,6 @@ urlpatterns = [
     path("users/", include("django.contrib.auth.urls")),
     # Searching
     path("search/", SearchResultView.as_view(), name="search"),
-    # Basket
-    path("basket/", include("baskets.urls")),
     # Products
     path("", include("products.urls")),
     # Sitemap
