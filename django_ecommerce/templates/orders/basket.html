@@ -14,10 +14,10 @@
             <br>
             <table class="table">
                 <tr>
-                    <th><h5>Items: <strong>{{ order.get_cart_quantity }}</strong></h5></th>
-                    <th><h5>Total:<strong> ${{ order.get_cart_price }}</strong></h5></th>
+                    <th><h5>Items: <strong>{{ order.get_basket_quantity }}</strong></h5></th>
+                    <th><h5>Total:<strong> ${{ order.get_basket_price }}</strong></h5></th>
                     <th>
-                        <a  style="float:right; margin:5px;" class="btn btn-success" href="#">Checkout</a>
+                        <a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
                     </th>
                 </tr>
             </table>
@@ -42,9 +42,9 @@
                     <div style="flex:1">
                         <p class="quantity">{{ item.quantity }}</p>
                         <div class="quantity">
-                            <img data-product="{{ item.product.id }}" data-action="add" class="chg-quantity update-cart" src="{% static  'images/arrow-up.png' %}">
+                            <img data-action="add" class="chg-quantity" src="{% static  'images/arrow-up.png' %}">
 
-                            <img data-product="{{ item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="{% static  'images/arrow-down.png' %}">
+                            <img data-action="remove" class="chg-quantity" src="{% static  'images/arrow-down.png' %}">
                         </div>
                     </div>
                     <div style="flex:1"><p>${{ item.get_total }}</p></div>
