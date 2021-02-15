@@ -4,8 +4,8 @@
 {% block title %}Products{% endblock title %}
 
 {% block content %}
-{% for product in product_list %}
 <div class="row">
+    {% for product in product_list %}
     <div class="col-lg-4">
         <img class="thumbnail" src="{{ product.image.url }}">
         <div class="box-element product">
@@ -17,6 +17,6 @@
             <h4 style="display: inline-block; float: right"><strong>${{ product.price }}</strong></h4>
         </div>
     </div>
+    {% endfor %}
 </div>
-{% endfor %}
 {% endblock content %}

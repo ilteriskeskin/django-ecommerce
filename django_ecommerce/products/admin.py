@@ -8,6 +8,7 @@ class ProductInLine(admin.TabularInline):
     extra = 1
 
 
+@admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         "title",
@@ -23,12 +24,9 @@ class ProductAdmin(admin.ModelAdmin):
     order_by = "-date_added"
 
 
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     inlines = [
         ProductInLine,
     ]
     prepopulated_fields = {"slug": ("title",)}
-
-
-admin.site.register(Product, ProductAdmin)
-admin.site.register(Category, CategoryAdmin)

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     # Local apps
     "users.apps.UsersConfig",
     "products.apps.ProductsConfig",
-    "baskets.apps.BasketsConfig",
+    "orders.apps.OrdersConfig",
     # Third-party apps
     "crispy_forms",
 ]
@@ -136,6 +136,7 @@ STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
 AUTH_USER_MODEL = "users.CustomUser"
 
 # Redirection urls.
+LOGIN_URL = "home"  # For login_required decorator.
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 

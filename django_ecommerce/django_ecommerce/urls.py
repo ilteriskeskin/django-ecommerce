@@ -17,17 +17,17 @@ info_dict = {
 
 urlpatterns = [
     # Default
-    path("home/", TemplateView.as_view(template_name="home.html"), name="home"),
+    path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("admin/", admin.site.urls),
     # Authentication
     path("users/", include("users.urls")),
     path("users/", include("django.contrib.auth.urls")),
     # Searching
     path("search/", SearchResultView.as_view(), name="search"),
-    # Basket
-    path("basket/", include("baskets.urls")),
+    # Orders
+    path("orders/", include("orders.urls")),
     # Products
-    path("", include("products.urls")),
+    path("products/", include("products.urls")),
     # Sitemap
     path(
         "sitemap.xml",

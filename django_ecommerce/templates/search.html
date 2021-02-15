@@ -5,25 +5,25 @@
 {% block content %}
 <h1>Search Results</h1>
 <hr />
-{% if product_list %}
-{% for product in product_list %}
-<div class="row">
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{{ product.image.url }}">
-        <div class="box-element product">
-            <h6><strong>{{ product.title }}</strong></h6>
-            <hr>
 
-            <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
-            <a class="btn btn-outline-success" href="{{ product.get_absolute_url }}">View</a>
-            <h4 style="display: inline-block; float: right"><strong>${{ product.price }}</strong></h4>
-        </div>
-    </div>
-</div>
-{% endfor %}
-{% else %}
-<br/>
-<h2>No product(s) found.</h2>
-{% endif %}
+<div class="row">
+    {% if product_list %}
+        {% for product in product_list %}
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{{ product.image.url }}">
+                <div class="box-element product">
+                    <h6><strong>{{ product.title }}</strong></h6>
+                    <hr>
+
+                    <button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                    <a class="btn btn-outline-success" href="{{ product.get_absolute_url }}">View</a>
+                    <h4 style="display: inline-block; float: right"><strong>${{ product.price }}</strong></h4>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <br/>
+        <h2>No product(s) found.</h2>
+    {% endif %}
 </div>
 {% endblock content %}

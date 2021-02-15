@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Basket{% endblock title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box-element">
+
+            <a  class="btn btn-outline-dark" href="{% url 'product-list' %}">&#x2190; Continue Shopping</a>
+
+            <br>
+            <br>
+            <table class="table">
+                <tr>
+                    <th><h5>Items: <strong>{{ order.get_basket_quantity }}</strong></h5></th>
+                    <th><h5>Total:<strong> ${{ order.get_basket_price }}</strong></h5></th>
+                    <th>
+                        <a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+
+        <br>
+        <div class="box-element">
+            <div class="cart-row">
+                <div style="flex:2"></div>
+                <div style="flex:2"><strong>Item</strong></div>
+                <div style="flex:1"><strong>Price</strong></div>
+                <div style="flex:1"><strong>Quantity</strong></div>
+                <div style="flex:1"><strong>Total</strong></div>
+            </div>
+
+            {% for item in items %}
+                <div class="cart-row">
+                    <div style="flex:2"><img class="row-image" src="{{ item.product.image.url }}"></div>
+                    <div style="flex:2"><p>{{ item.product.title }}</p></div>
+                    <div style="flex:1"><p>${{ item.product.price }}</p></div>
+                    <div style="flex:1">
+                        <p class="quantity">{{ item.quantity }}</p>
+                        <div class="quantity">
+                            <img data-action="add" class="chg-quantity" src="{% static  'images/arrow-up.png' %}">
+
+                            <img data-action="remove" class="chg-quantity" src="{% static  'images/arrow-down.png' %}">
+                        </div>
+                    </div>
+                    <div style="flex:1"><p>${{ item.get_total }}</p></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
