@@ -15,5 +15,4 @@ def basket_view(request):
         "order": order,
     }
 
-    print(context)
     return render(request, "basket/basket.html", context)
