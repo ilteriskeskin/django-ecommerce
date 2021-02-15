@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # Local apps
     "users.apps.UsersConfig",
     "products.apps.ProductsConfig",
+    "orders.apps.OrdersConfig",
     # Third-party apps
     "crispy_forms",
 ]
