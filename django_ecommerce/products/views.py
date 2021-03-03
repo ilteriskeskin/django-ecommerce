@@ -7,6 +7,7 @@ class ProductListView(ListView):
     model = Product
     template_name = "products/product_list.html"
     context_object_name = "product_list"
+    paginate_by = 6
 
 
 class ProductDetailView(DetailView):
@@ -19,6 +20,7 @@ class SearchResultView(ListView):
     model = Product
     template_name = "search.html"
     context_object_name = "product_list"
+    paginate_by = 6
 
     def get_queryset(self):
         query = self.request.GET.get("q")
